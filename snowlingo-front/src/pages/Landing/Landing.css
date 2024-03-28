@@ -1,0 +1,33 @@
+.logo{
+    text-align: left;
+    margin-bottom: 0%;
+    margin-top: 20%;
+    /* display: flex; */
+}
+
+.advanture{
+    font-size: 20px;
+    font-weight: normal;
+    margin-top: 0%;
+}
+
+.login{
+    font-size: 45px;
+    font-weight: bolder;
+    text-decoration: underline;
+    color: #15F5BA;
+    margin-bottom: 0%;
+}
+
+.account-sign{
+    display: flex;
+    font-size: small;
+    margin-top: 0%;
+}
+
+.signup{
+    color: #FE76FF;
+    text-decoration: underline;
+    margin-left: 2%;
+    margin-top: 0%;
+}
