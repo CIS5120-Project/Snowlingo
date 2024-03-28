@@ -1,0 +1,11 @@
+root {
+    background-color: #211951;
+}
+
+button {
+    height: 73px;
+    width: 352px;
+    color: #15F5BA;
+    text-align: center;
+    font-size: 20px;
+}
