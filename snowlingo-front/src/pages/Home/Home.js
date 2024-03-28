@@ -11,7 +11,14 @@ function Home (){
 
   return (
     <div>
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, mt: 4 }}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 2,
+          margin: '3rem 1.5rem'
+        }}>
         <img src={logo} alt="logo img" style={{ marginTop: "4rem" }}/>
         <Typography
           variant="body3"
