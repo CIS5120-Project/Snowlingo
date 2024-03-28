@@ -14,6 +14,7 @@ import PersonInfo from "./pages/PersonInfo/PersonInfo";
 import Home from "./pages/Home/Home";
 import Lesson from "./pages/Lesson/Lesson";
 import Unit from "./pages/Unit/Unit";
+import Maintenance from './pages/Maintenance/Maintenance';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/skiinfo" element={<SkiInfo />} />
             <Route path="/personinfo" element={<PersonInfo />} />
             <Route path="/unit" element={<Unit />} />
+            <Route path="/maintenance" element={<Maintenance />} />
             <Route path="/" element={<Landing />} />
           </Routes>
         </div>
