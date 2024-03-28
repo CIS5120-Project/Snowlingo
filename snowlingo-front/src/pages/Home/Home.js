@@ -1,21 +1,17 @@
+import React from "react";
 import { Container, Divider, Link } from '@mui/material';
 import { TextareaAutosize } from '@mui/base';
 import snow from './snowlingo.svg';
 
+function Home (){
+  return (
+    <div>
+      <main> Home </main>
+      <footer>
+        <p>© 2024 Snowlingo. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+};
 
-
-export default function Home() {
-
-    return (
-        <Container>
-            <img width='400' height='200' src={snow} alt="logo" />
-            <h2>Great Advanture!</h2>
-            <Divider>
-                
-            </Divider>
-            <h2>Contact us!</h2>
-        </Container>
-    );
-    
-
-}
+export default Home;
