@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Container, Divider, Link, IconButton } from '@mui/material';
 import { TextareaAutosize } from '@mui/base';
 import snow from './snowlingo.svg';
+import icemount from './icemount.svg';
 import PhoneIcon from '@mui/icons-material/Phone';
 
 function Landing (){
@@ -34,10 +35,12 @@ function Landing (){
             <p class='signup' onClick={goToPersoninfo}> SignUp here</p>
         </div>
       </div>
-      <div style={{ marginTop: '400px', marginBottom: '100px', display: 'flex'}}>
+      
+      <div style={{ marginTop: '100px', marginBottom: '100px', display: 'flex'}}>
         <PhoneIcon style={{color: 'white'}}></PhoneIcon>
         <p class='contact'>Contact us!</p>
       </div>
+      {/* <img height={400} width={400} src={icemount}/> */}
 
       <footer>
         <p style={{color: 'white'}}>© 2024 Snowlingo. All rights reserved.</p>
