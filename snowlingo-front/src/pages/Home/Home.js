@@ -7,6 +7,10 @@ function Home (){
   return (
     <div>
       <main> Home </main>
+      <img height={170} width={400} src={snow} alt="logo"></img>
+      <p>Great Advanture!</p>
+      
+      <p>Contact us!</p>
       <footer>
         <p>© 2024 Snowlingo. All rights reserved.</p>
       </footer>
