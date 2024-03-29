@@ -1,5 +1,6 @@
 import React from "react";
 import "./PersonInfo.css";
+import logo from "../../snowlingo.svg"
 
 function PersonInfo () {
   return (
