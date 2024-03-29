@@ -35,7 +35,7 @@ function Landing (){
             <p class='signup' onClick={goToPersoninfo}> SignUp here</p>
         </div>
       </div>
-      
+
       <div style={{ marginTop: '100px', marginBottom: '100px', display: 'flex'}}>
         <PhoneIcon style={{color: 'white'}}></PhoneIcon>
         <p class='contact'>Contact us!</p>
