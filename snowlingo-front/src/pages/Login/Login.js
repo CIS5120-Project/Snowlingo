@@ -1,11 +1,27 @@
+import "./login.css"
 import React from "react";
 import snow from './snowlingo.svg';
+import { Link } from 'react-router-dom';
+import { Divider, IconButton } from '@mui/material';
+import PersonOutlineRoundedIcon from '@mui/icons-material/PersonOutlineRounded';
+
+
 
 function Login (){
+
   return (
     <div>
       <main> Login </main>
-      <img height={100} width={400} src={snow} atl='logo'></img>
+      <Link to="/landing">
+        <img id="login-snow" src={snow} alt="logo"></img>
+      </Link>
+
+      <div className="login-typein">
+        <PersonOutlineRoundedIcon />
+      </div>
+      
+
+
 
 
 
