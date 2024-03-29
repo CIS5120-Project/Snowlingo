@@ -3,9 +3,9 @@ import "./PersonInfo.css";
 
 function PersonInfo () {
   return (
-    <div id='root'>
+    <div className="personInfoContainer">
       <main> PersonInfo </main>
-      <div id='outer'>
+      <div style={{margin: '10% 10%'}}>
         <h1>About you</h1>
         <div>
           <h2>You want to learn ...</h2>
@@ -29,9 +29,6 @@ function PersonInfo () {
           </button>
         </div>
       </div>
-      <footer>
-        <p>© 2024 Snowlingo. All rights reserved.</p>
-      </footer>
     </div>
   );
 };
