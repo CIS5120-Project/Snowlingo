@@ -1,7 +1,6 @@
 import "./Landing.css"
 import React from "react";
-import { Container, Divider, Link } from '@mui/material';
-import { TextareaAutosize } from '@mui/base';
+
 import snow from './snowlingo.svg';
 import PhoneIcon from '@mui/icons-material/Phone';
 
@@ -13,8 +12,8 @@ function Landing (){
       <img height={100} width={400} src={snow} alt="logo" />
       </div>
       <p class="advanture">Great Advanture!</p>
-      
-      <div> 
+
+      <div>
         <p class='login'>Login {'>>>'}</p>
         <div class='account-sign'>
             <p style={{marginTop:'0px'}}>Don't have account?  </p>

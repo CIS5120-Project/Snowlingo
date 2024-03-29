@@ -1,12 +1,8 @@
-#root {
-    background-color: #211951;
-}
-
-h1, h2, button {
+.personInfoContainer h1, h2, button {
     color: #F0F3FF;
 }
 
-button {
+.personInfoContainer button {
     height: 73px;
     width: 352px;
     border-color: #15F5BA;
@@ -16,8 +12,4 @@ button {
     font-size: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-#outer {
-    margin: 10% 10%;
 }
