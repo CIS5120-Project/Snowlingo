@@ -1,4 +1,6 @@
 import React from "react";
+import { Route, Redirect } from 'react-router-dom'
+import { useState, useEffect } from "react";
 import "./PersonInfo.css";
 import logo from "../../snowlingo.svg"
 
@@ -9,6 +11,15 @@ import CreateIcon from '@mui/icons-material/Create';
 function PersonInfo () {
   const theme = useTheme();
   const navigate = useNavigate();
+
+  const [topic, setTopic] = useState(null);
+  const [level, setLevel] = useState(null);
+
+  useEffect(() => {
+    if (topic && level) {
+      navigate("/skiinfo")
+    }
+  });
 
   return (
     <Box
@@ -48,9 +59,11 @@ function PersonInfo () {
           <Button
             variant="outlined"
             fullWidth
+            style={{
+              backgroundColor: (topic === 'snowboard' ? theme.palette.secondary.main : theme.palette.primary.dark)
+            }}
             sx={{
               height: '7vh',
-              backgroundColor: theme.palette.primary.dark,
               '&:hover': { backgroundColor: theme.palette.secondary.main},
               borderColor: theme.palette.secondary.main,
               padding: '8px 30px',
@@ -59,7 +72,7 @@ function PersonInfo () {
               color: theme.palette.primary.main,
               justifyContent: 'center'
             }}
-            onClick = {() => navigate("/maintenance")}
+            onClick = {() => setTopic('snowboard')}
           >
             <Typography
               variant="body3"
@@ -74,18 +87,19 @@ function PersonInfo () {
           <Button
             variant="outlined"
             fullWidth
+            style={{
+              backgroundColor: (topic === 'ski' ? theme.palette.secondary.main : theme.palette.primary.dark)
+            }}
             sx={{
               height: '7vh',
-              backgroundColor: theme.palette.primary.dark,
-              '&:hover': { backgroundColor: theme.palette.secondary.main},
+              '&:hover': { backgroundColor: theme.palette.secondary.main },
               borderColor: theme.palette.secondary.main,
               padding: '8px 30px',
               paddingRight: '16px',
               borderRadius: '15px',
-              color: theme.palette.primary.main,
               justifyContent: 'center'
             }}
-            onClick = {() => navigate("/maintenance")}
+            onClick = {() => setTopic('ski')}
           >
             <Typography
               variant="body3"
@@ -117,9 +131,11 @@ function PersonInfo () {
           <Button
             variant="outlined"
             fullWidth
+            style={{
+              backgroundColor: (level === 'beginner' ? theme.palette.secondary.main : theme.palette.primary.dark)
+            }}
             sx={{
               height: '7vh',
-              backgroundColor: theme.palette.primary.dark,
               '&:hover': { backgroundColor: theme.palette.secondary.main},
               borderColor: theme.palette.secondary.main,
               padding: '8px 30px',
@@ -128,7 +144,7 @@ function PersonInfo () {
               color: theme.palette.primary.main,
               justifyContent: 'center'
             }}
-            onClick = {() => navigate("/maintenance")}
+            onClick = {() => setLevel('beginner')}
           >
             <Typography
               variant="body3"
@@ -143,6 +159,9 @@ function PersonInfo () {
           <Button
             variant="outlined"
             fullWidth
+            style={{
+              backgroundColor: (level === 'intermediate' ? theme.palette.secondary.main : theme.palette.primary.dark)
+            }}
             sx={{
               height: '7vh',
               backgroundColor: theme.palette.primary.dark,
@@ -154,7 +173,7 @@ function PersonInfo () {
               color: theme.palette.primary.main,
               justifyContent: 'center'
             }}
-            onClick = {() => navigate("/maintenance")}
+            onClick = {() => setLevel('intermediate')}
           >
             <Typography
               variant="body3"
@@ -169,9 +188,11 @@ function PersonInfo () {
           <Button
             variant="outlined"
             fullWidth
+            style={{
+              backgroundColor: (level === 'advanced' ? theme.palette.secondary.main : theme.palette.primary.dark)
+            }}
             sx={{
               height: '7vh',
-              backgroundColor: theme.palette.primary.dark,
               '&:hover': { backgroundColor: theme.palette.secondary.main},
               borderColor: theme.palette.secondary.main,
               padding: '8px 30px',
@@ -180,7 +201,7 @@ function PersonInfo () {
               color: theme.palette.primary.main,
               justifyContent: 'center'
             }}
-            onClick = {() => navigate("/maintenance")}
+            onClick = {() => setLevel('advanced')}
           >
             <Typography
               variant="body3"
