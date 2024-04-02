@@ -3,8 +3,7 @@ import "./SkiInfo.css";
 import logo from "../../snowlingo.svg"
 
 import { useNavigate } from 'react-router-dom';
-import { Box, Button, Stack, TextField, Typography, Grid, useTheme } from '@mui/material';
-import CreateIcon from '@mui/icons-material/Create';
+import { Box, Stack, TextField, Typography, Grid, useTheme } from '@mui/material';
 
 function SkiInfo () {
   const theme = useTheme();
@@ -149,7 +148,6 @@ function SkiInfo () {
             <TextField
               fullWidth
               variant="standard"
-              type="number"
               label="Living Area:"
               inputProps={{
                 style: {textAlign: "right"}
@@ -192,7 +190,9 @@ function SkiInfo () {
               textDecoration: "underline"
             }
           }}
-          onClick = {() => navigate("/home")}
+          onClick = {() => {
+            navigate("/home")
+          }}
         >
           Submit {'>>>'}
         </Typography>

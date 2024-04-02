@@ -1,12 +1,10 @@
 import React from "react";
-import { Route, Redirect } from 'react-router-dom'
 import { useState, useEffect } from "react";
 import "./PersonInfo.css";
 import logo from "../../snowlingo.svg"
 
 import { useNavigate } from 'react-router-dom';
 import { Box, Button, Stack, Typography, useTheme } from '@mui/material';
-import CreateIcon from '@mui/icons-material/Create';
 
 function PersonInfo () {
   const theme = useTheme();
