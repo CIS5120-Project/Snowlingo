@@ -10,7 +10,6 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
 const Login = () => {
-
   const log_username = "lucawu"
   const log_password = "1234567"
   const [username, setUsername] = useState('');
