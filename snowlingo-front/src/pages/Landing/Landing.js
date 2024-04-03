@@ -1,8 +1,7 @@
 import "./Landing.css"
-import React,{useState} from "react";
+import React from "react";
 import { useNavigate } from 'react-router-dom';
-import { Container, Divider, Link, IconButton } from '@mui/material';
-import { TextareaAutosize } from '@mui/base';
+import { IconButton } from '@mui/material';
 import snow from './snowlingo.svg';
 import PhoneIcon from '@mui/icons-material/Phone';
 
@@ -13,10 +12,6 @@ function Landing (){
   }
   const goToPersoninfo =() => {
     navigate('/personinfo');
-  }
-
-  const handleLoginClick = (event) => {
-
   }
 
   return (

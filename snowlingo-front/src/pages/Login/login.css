@@ -1,12 +1,13 @@
 #login-snow {
-    width: 400px;
-    height: 200px;
-    margin-top: 6rem;
+    width: 250px;
+    height: 100px;
+    margin-top: 40%;
+    margin-left: 1rem;
 }
 
 .whitten{
     color: white;
-
+    margin: 1rem 0.5rem;
 }
 
 #login-butt{
