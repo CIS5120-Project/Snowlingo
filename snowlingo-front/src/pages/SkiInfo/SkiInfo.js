@@ -15,9 +15,6 @@ function SkiInfo () {
         </div>
       </div>
       <h1 id='submit'>Submit <br></br> &gt;&gt;&gt;</h1>
-      <footer>
-        <p>© 2024 Snowlingo. All rights reserved.</p>
-      </footer>
     </div>
   );
 };

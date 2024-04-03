@@ -13,38 +13,33 @@ function Landing (){
     navigate('/Login');
   }
   const goToPersoninfo =() => {
-    navigate('/Personalinfo');
+    navigate('/skiinfo');
   }
 
   const handleLoginClick = (event) => {
-    
+
   }
 
   return (
-    <div>
-      <main> Landing </main>
+    <div className="background-mountain landing">
+      <main>Landing</main>
       <div className="logo">
-      <img height={100} width={400} src={snow} alt="logo" />
+        <img height={100} width={400} src={snow} alt="logo"/>
       </div>
-      <p class="advanture">Great Advanture!</p>
-      
-      <div> 
-        <IconButton class='login' onClick={goToLogin}>Login {'>>>'}</IconButton>
-        <div class='account-sign'>
+      <p className="advanture">Great Advanture!</p>
+
+      <div>
+        <IconButton className='login' onClick={goToLogin}>Login {'>>>'}</IconButton>
+        <div className='account-sign'>
             <p style={{marginTop:'0px'}}>Don't have account?  </p>
-            <p class='signup' onClick={goToPersoninfo}> SignUp here</p>
+            <p className='signup' onClick={goToPersoninfo}> SignUp here</p>
         </div>
       </div>
 
-      <div style={{ marginTop: '100px', marginBottom: '100px', display: 'flex'}}>
+      <div style={{ "margin": "100px 1rem", "display": 'flex'}}>
         <PhoneIcon style={{color: 'white'}}></PhoneIcon>
-        <p class='contact'>Contact us!</p>
+        <p className='contact'>Contact us!</p>
       </div>
-      {/* <img height={400} width={400} src={icemount}/> */}
-
-      <footer>
-        <p style={{color: 'white'}}>© 2024 Snowlingo. All rights reserved.</p>
-      </footer>
     </div>
   );
 };

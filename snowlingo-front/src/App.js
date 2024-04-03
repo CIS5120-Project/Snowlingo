@@ -21,7 +21,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <div>
+        <div style={{'display': "flex", "flexDirection": "column", "height": "100vh"}}>
           <Navbar />
           <DropdownMenu />
           <Routes>
