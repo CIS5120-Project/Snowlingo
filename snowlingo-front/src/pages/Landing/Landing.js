@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { Container, Divider, Link, IconButton } from '@mui/material';
 import { TextareaAutosize } from '@mui/base';
 import snow from './snowlingo.svg';
-import icemount from './icemount.svg';
 import PhoneIcon from '@mui/icons-material/Phone';
 
 function Landing (){
@@ -13,7 +12,7 @@ function Landing (){
     navigate('/Login');
   }
   const goToPersoninfo =() => {
-    navigate('/skiinfo');
+    navigate('/personinfo');
   }
 
   const handleLoginClick = (event) => {
