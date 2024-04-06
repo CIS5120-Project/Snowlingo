@@ -12,18 +12,44 @@ function SkiInfo () {
   return (
     <Box
       sx={{
-        margin: '10% 10%'
+        margin: '8% 10%'
       }}>
       <img src={logo} alt="logo img" style={{ marginTop: "1rem", marginBottom: "1.5rem" }}/>
-      <Typography
-        variant="h4"
-        gutterBottom
-        sx={{
-          color: theme.palette.primary.light
-        }}
-      >
-        About you
-      </Typography>
+
+      <Box>
+        <Box
+          sx={{
+            width: "60vw",
+            height: "1.3vh",
+            backgroundColor: "#FE76FF",
+            right: 0,
+            top: 213,
+            opacity: 0.9,
+            position: "absolute"
+          }}
+        />
+        <Typography
+          variant="h4"
+          gutterBottom
+          sx={{
+            color: theme.palette.primary.light
+          }}
+        >
+          About you
+        </Typography>
+        <Box
+          sx={{
+            width: "18vw",
+            height: "0.9vh",
+            backgroundColor: theme.palette.secondary.main,
+            left: 0,
+            top: 235,
+            opacity: 0.9,
+            position: "absolute"
+          }}
+        />
+      </Box>
+
       <Stack direction="column" spacing={2} sx={{ width: '100%', maxWidth: 360, mt: 3 }}>
         <Grid
           container
@@ -40,11 +66,11 @@ function SkiInfo () {
               type="number"
               label="Age:"
               inputProps={{
-                style: {textAlign: "right"}
+                style: {textAlign: "right", fontSize: "1.1rem"},
               }}
               InputLabelProps={{
-                style: { color: "#F0F3FF" },
-                shrink: false
+                style: { color: "#F0F3FF", fontSize: "1.1rem" },
+                shrink: false,
               }}
               sx={{
                 backgroundColor: theme.palette.primary.dark,
@@ -74,13 +100,12 @@ function SkiInfo () {
             <TextField
               fullWidth
               variant="standard"
-              type="number"
               label="Height:"
               inputProps={{
-                style: {textAlign: "right"}
+                style: {textAlign: "right", fontSize: "1.1rem"}
               }}
               InputLabelProps={{
-                style: { color: "#F0F3FF" },
+                style: { color: "#F0F3FF", fontSize: "1.1rem" },
                 shrink: false
               }}
               sx={{
@@ -111,13 +136,12 @@ function SkiInfo () {
             <TextField
               fullWidth
               variant="standard"
-              type="number"
               label="Weight:"
               inputProps={{
-                style: {textAlign: "right"}
+                style: { textAlign: "right", fontSize: "1.1rem" }
               }}
               InputLabelProps={{
-                style: { color: "#F0F3FF" },
+                style: { color: "#F0F3FF", fontSize: "1.1rem" },
                 shrink: false
               }}
               sx={{
@@ -150,10 +174,10 @@ function SkiInfo () {
               variant="standard"
               label="Living Area:"
               inputProps={{
-                style: {textAlign: "right"}
+                style: { textAlign: "right", fontSize: "1.1rem" }
               }}
               InputLabelProps={{
-                style: { color: "#F0F3FF" },
+                style: { color: "#F0F3FF", fontSize: "1.1rem" },
                 shrink: false
               }}
               sx={{
