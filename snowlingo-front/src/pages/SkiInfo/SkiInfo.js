@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useDebugValue } from "react";
 import "./SkiInfo.css";
 import logo from "../../snowlingo.svg"
 
@@ -13,6 +13,12 @@ function SkiInfo () {
   const [deleteCount, setDeleteCount] = useState(0);
   const [lastMousePosition, setLastMousePosition] = useState({ x: 0, y: 0 });
   const [totalDistance, setTotalDistance] = useState(0);
+  const [startTime, setStartTime] = useState(null);
+  const [elapsedTime, setElapsedTime] = useState(null);
+
+  useEffect(() => {
+    setStartTime(Date.now());
+  }, [])
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -45,11 +51,15 @@ function SkiInfo () {
 
   // Function to handle submit and show alert
   const handleSubmit = () => {
+    const endTime = Date.now();
+    const timeUsed = (endTime - startTime) / 1000; // Time in seconds
+    setElapsedTime(timeUsed);
     alert(
       `Total Clicks: ${clickCount}\n` +
       `Total Keydowns: ${keyDownCount}\n` +
       `Delete Key Presses: ${deleteCount}\n` +
-      `Total Mouse Distance: ${totalDistance.toFixed(2)} pixels\n`
+      `Total Mouse Distance: ${totalDistance.toFixed(2)} pixels\n` +
+      `Total Time Used on this page: ${timeUsed.toFixed(2)} seconds`
     );
     // navigate("/home");
   };
