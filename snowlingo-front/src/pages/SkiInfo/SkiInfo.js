@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./SkiInfo.css";
 import logo from "../../snowlingo.svg"
 
@@ -8,12 +8,64 @@ import { Box, Stack, TextField, Typography, Grid, useTheme } from '@mui/material
 function SkiInfo () {
   const theme = useTheme();
   const navigate = useNavigate();
+  const [clickCount, setClickCount] = useState(0);
+  const [keyDownCount, setKeyDownCount] = useState(0);
+  const [deleteCount, setDeleteCount] = useState(0);
+  const [lastMousePosition, setLastMousePosition] = useState({ x: 0, y: 0 });
+  const [totalDistance, setTotalDistance] = useState(0);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      setKeyDownCount(prevCount => prevCount + 1);
+      if (event.key === "Backspace") {
+        setDeleteCount(prevCount => prevCount + 1);
+      }
+    };
+
+    const handleMouseMove = (event) => {
+      const newMousePosition = { x: event.clientX, y: event.clientY };
+      if (lastMousePosition.x && lastMousePosition.y) {
+        const deltaX = newMousePosition.x - lastMousePosition.x;
+        const deltaY = newMousePosition.y - lastMousePosition.y;
+        const distance = Math.sqrt(deltaX ** 2 + deltaY ** 2);
+        setTotalDistance(prevDistance => prevDistance + distance);
+      }
+      setLastMousePosition(newMousePosition);
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [lastMousePosition]);
+
+
+  // Function to handle submit and show alert
+  const handleSubmit = () => {
+    alert(
+      `Total Clicks: ${clickCount}\n` +
+      `Total Keydowns: ${keyDownCount}\n` +
+      `Delete Key Presses: ${deleteCount}\n` +
+      `Total Mouse Distance: ${totalDistance.toFixed(2)} pixels\n`
+    );
+    // navigate("/home");
+  };
+
+  // Function to increment click count
+  const handleInteraction = () => {
+    setClickCount(prevCount => prevCount + 1);
+  };
 
   return (
     <Box
+      onClick={handleInteraction}
       sx={{
         margin: '10% 10%'
-      }}>
+      }}
+    >
       <img src={logo} alt="logo img" style={{ marginTop: "1rem", marginBottom: "1.5rem" }}/>
       <Typography
         variant="h4"
@@ -190,9 +242,7 @@ function SkiInfo () {
               textDecoration: "underline"
             }
           }}
-          onClick = {() => {
-            navigate("/home")
-          }}
+          onClick = {handleSubmit}
         >
           Submit {'>>>'}
         </Typography>
