@@ -95,8 +95,8 @@ function SkiInfo2 () {
   useEffect(() => {
     if ('geolocation' in navigator) {
         navigator.geolocation.getCurrentPosition(handleSuccess, handleError, {
-            maximumAge: 60000, // Acceptable cache age of a position
-            timeout: 5000,    // Timeout for the request
+            // maximumAge: 60000, // Acceptable cache age of a position
+            // timeout: 5000,    // Timeout for the request
             enableHighAccuracy: true // Request high accuracy position
         });
     } else {
