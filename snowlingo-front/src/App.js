@@ -10,6 +10,7 @@ import DropdownMenu from "./components/DropdownMenu/DropdownMenu";
 import Landing from "./pages/Landing/Landing";
 import Login from "./pages/Login/Login";
 import SkiInfo from "./pages/SkiInfo/SkiInfo";
+import SkiInfo2 from "./pages/SkiInfo/SkiInfo2";
 import PersonInfo from "./pages/PersonInfo/PersonInfo";
 import Home from "./pages/Home/Home";
 import Lesson from "./pages/Lesson/Lesson";
@@ -30,6 +31,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/lesson" element={<Lesson />} />
             <Route path="/skiinfo" element={<SkiInfo />} />
+            <Route path="/skiinfo2" element={<SkiInfo2 />} />
             <Route path="/personinfo" element={<PersonInfo />} />
             <Route path="/unit" element={<Unit />} />
             <Route path="/maintenance" element={<Maintenance />} />

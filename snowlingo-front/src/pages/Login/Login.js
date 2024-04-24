@@ -10,7 +10,6 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
 const Login = () => {
-
   const log_username = "lucawu"
   const log_password = "1234567"
   const [username, setUsername] = useState('');
@@ -66,48 +65,45 @@ const Login = () => {
 
   return (
     <Box>
-    <img id="login-snow" src={snow} alt="logo"></img>
-    {/* <Divider color='primary' /> */}
-    <Grid container alignItems="left" justify="left" style={{ minHeight: '60vh', backgroundColor: 'inherit' }}>
-      <Paper elevation={10} style={{ padding: 10, width: 400, height:200, margin: "30px auto" , backgroundColor:'inherit'}}>
-        <Grid container direction="column" spacing={1} alignSelf="left">
-          {/* <Avatar style={{ backgroundColor: '#1bbd7e' }}> */}
-            {/* <LockOutlinedIcon /> */}
-          {/* </Avatar> */}
-          {/* <h2>Sign In</h2> */}
-          <Box sx={{ display: 'flex', justify: "left",alignItems: 'center', gap: 0, margin: 0, padding: 0 }}>
-            <PersonOutlineRoundedIcon color='secondary'/>
-            <TextField label='Username' placeholder='Enter username' onChange={(e)=>setUsername(e.target.value)} fullWidth required  InputLabelProps={{ style: { color: 'white' } }}   InputProps={{style: { color: 'white' }}}/>
-          </Box>
-          <Box sx={{ display: 'flex', justify: "left",alignItems: 'center', gap:0}}>
-            <LockOutlinedIcon color='secondary'/>
-            <TextField label='Password' placeholder='Enter password' type='password' onChange={(e)=>setPassword(e.target.value)} fullWidth required  InputLabelProps={{ style: { color: 'white' } }}   InputProps={{style: { color: 'white' }}} />
-          </Box>
-          <FormControlLabel class="whitten"
-            control={
-              <Checkbox
-                name="checkedB"
-                color="primary"
-                sx={{
-                  color: 'white', // Color when unchecked
-                  '&.Mui-checked': {
-                    color: 'white', // Color when checked
-                  },
-                }}
-              />
-            }
-            label="Remember me"
-          />
-          <Grid align="center">
-            <Button type='submit' color='secondary' variant="contained" id="login-butt" fullWidth={false}
-            onClick={handleClickLogin}
-            >Login
-            </Button>
-            {loginMessage && <p class='whitten'>{loginMessage}</p>}
+      <img id="login-snow" src={snow} alt="logo"></img>
+      {/* <Divider color='primary' /> */}
+      <Grid container alignItems="left" justify="left" style={{ minHeight: '60vh', backgroundColor: 'inherit', marginLeft: 0 }}>
+        <Paper elevation={10} style={{ padding: 10, width: 400, height:200, margin: "30px 0" , backgroundColor:'inherit', border:'none', boxShadow: 'none'}}>
+          <Grid container direction="column" spacing={1} alignSelf="left">
+            <Box sx={{ display: 'flex', justify: "left",alignItems: 'center', gap: 0, margin: 0, paddingLeft: '1rem', borderBottom: '1px solid #F0F3FF'}}>
+              <PersonOutlineRoundedIcon color='secondary'/>
+              <TextField label='Username' variant="filled" placeholder='Enter username' onChange={(e)=>setUsername(e.target.value)} fullWidth required  InputLabelProps={{ style: { color: 'white' } }}  InputProps={{style: { color: 'white' }}}/>
+            </Box>
+            <Box sx={{ display: 'flex', justify: "left",alignItems: 'center', gap:0, paddingLeft: '1rem', borderBottom: '1px solid #F0F3FF'}}>
+              <LockOutlinedIcon color='secondary'/>
+              <TextField label='Password' variant="filled" placeholder='Enter password' type='password' onChange={(e)=>setPassword(e.target.value)} fullWidth required  InputLabelProps={{ style: { color: 'white' } }}   InputProps={{style: { color: 'white' }}} />
+            </Box>
+            <FormControlLabel
+              class="whitten"
+              control={
+                <Checkbox
+                  name="checkedB"
+                  color="primary"
+                  sx={{
+                    color: 'white', // Color when unchecked
+                    '&.Mui-checked': {
+                      color: 'white', // Color when checked
+                    }
+                  }}
+                />
+              }
+              label="Remember me"
+            />
+            <Grid align="center">
+              <Button type='submit' color='secondary' variant="contained" id="login-butt" fullWidth={false}
+              onClick={handleClickLogin}
+              >Login
+              </Button>
+              {loginMessage && <p class='whitten'>{loginMessage}</p>}
+            </Grid>
           </Grid>
-        </Grid>
-      </Paper>
-    </Grid>
+        </Paper>
+      </Grid>
     </Box>
   );
 };
