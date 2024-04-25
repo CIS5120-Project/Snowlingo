@@ -1,0 +1,52 @@
+.snowBg {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.9) 100%),
+    url('https://snowlingo-images.s3.amazonaws.com/kira-laktionov-n9lNQ3O98k8-unsplash.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.gradient-text {
+  background-color: #836FFF;
+  background-image: linear-gradient(45deg, #836FFF, #15F5BA);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.hiddenScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.image-container img.visible {
+  opacity: 1; /* Fade to visible */
+}
+
+.image-container img.hidden {
+  opacity: 0; /* Fade to hidden */
+}
+
+@keyframes bounce-left-right {
+  0%, 100% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0.8, 0.2, 1, 1);
+  }
+  50% {
+    transform: translateX(5px);  /* Adjust the translateX value to control the bounce distance */
+    animation-timing-function: cubic-bezier(0.6, 0.4, 1, 1);
+  }
+}
+
+.bounceX {
+  display: inline-block;
+  animation: bounce-left-right 1s infinite;
+}

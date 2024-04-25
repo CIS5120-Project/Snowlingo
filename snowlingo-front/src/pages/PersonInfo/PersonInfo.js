@@ -134,7 +134,7 @@ function PersonInfo () {
       </Box>
 
       <Fade in={topic !== null} timeout={1000}>
-          <Box
+        <Box
           sx={{
             marginTop: '2rem',
             marginBottom: '2rem'
@@ -247,23 +247,32 @@ function PersonInfo () {
       </Fade>
 
       <Fade in={level !== null} timeout={1000}>
-        <Typography
-          variant="h1"
+        <Button
+          variant="outlined"
+          fullWidth
+          style={{
+            backgroundColor: theme.palette.secondary.main
+          }}
           sx={{
-            color: "#FE76FF",
-            fontSize: "2rem",
-            marginLeft: "70%",
-            cursor: "pointer",
-            "&:hover": {
-              textDecoration: "underline"
-            }
+            height: '4vh',
+            width: '6rem',
+            marginTop: '15px',
+            borderRadius: '15px',
+            float: "right"
           }}
-          onClick = {() => {
-            navigate("/skiinfo")
-          }}
+          onClick = {() => navigate("/skiinfo")}
         >
-          Next {'>>>'}
-        </Typography>
+          <Typography
+            variant="body3"
+            fontSize={"1.1rem"}
+            gutterBottom
+            sx={{
+              color: "black"
+            }}
+          >
+            Next
+          </Typography>
+        </Button>
       </Fade>
     </Box>
   );
