@@ -2,7 +2,7 @@ import React from "react";
 import './Card_init.css'
 import snow from '../../snowlingo.svg';
 import card_g from './card_g.svg';
-import ski_icon from './pics/ski_icon.svg';
+import ski_icon from './pics/board_icon.svg';
 import jump_1 from './pics/jump_1.svg';
 import { NavLink } from 'react-router-dom';
 // import { Box, Grid, Paper, TextField, Button } from '@mui/material';
@@ -21,7 +21,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 
-const Card0 = () => {
+const Card1 = () => {
 
     return (
         <Box
@@ -145,4 +145,4 @@ const Card0 = () => {
     );
 };
 
-export default Card0;
+export default Card1;
