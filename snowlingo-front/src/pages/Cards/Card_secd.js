@@ -5,10 +5,12 @@ import card_g from './card_g.svg';
 import ski_icon from './pics/board_icon.svg';
 import jump_1 from './pics/jump_1.svg';
 import balance from './pics/balance.svg';
+import lesson from './pics/lesson.svg';
 import map from './pics/map.svg';
 import { NavLink } from 'react-router-dom';
 // import { Box, Grid, Paper, TextField, Button } from '@mui/material';
 import { Box, Button} from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 // import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -24,6 +26,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 
 const Card1 = () => {
+
+    const handleClick = () => {
+        console.log('The image was clicked!');
+      };
 
     return (
         <Box
@@ -75,7 +81,53 @@ const Card1 = () => {
                 marginTop: '10px',
               }}
             >
-                <SwiperSlide id="first_pic">
+                 <SwiperSlide id="lesson_card">
+                    {/* Content of your first slide */}
+                    <div style={{ position: 'relative' }}>
+                        <img id="card_backg" src={card_g} alt="logo" />
+                        <img id="lesson_1" src={lesson} alt="logo"  onClick={handleClick}
+                            style={{
+                                position: 'absolute',
+                                top: '45%', // Adjust this value to position `jump_1` as needed
+                                left: '100%', // Adjust this value to position `jump_1` as needed
+                                transform: 'translate(-50%, -50%)', // This centers the image on the container
+                                width: '90%', // Adjust this value to set the size of the `jump_1`
+                                height: 'auto',
+                                zIndex: 2, // Ensure `jump_1` is above `card_backg`
+                                cursor: 'pointer',
+                            }}
+                        />
+                        <p
+                        style={{
+                            position: 'absolute',
+                            top: '67%', // Adjust as needed to move the text up or down
+                            left: '99%', // Center horizontally
+                            transform: 'translate(-50%, -50%)',
+                            width: '170px',
+                            height: 'auto',
+                            color: 'white',
+                            wordSpacing: '-1px',
+                            lineHeight: '1.1',
+                            textAlign: 'center',
+                            zIndex: 3, // Make sure the text is above the image layers
+                          }}
+                        >How To Fix Heel Jutter In Your Snowboard Turns</p>
+                        <p
+                        style={{
+                            position: 'absolute',
+                            top: '15%', // Adjust as needed to move the text up or down
+                            left: '124%', // Center horizontally
+                            transform: 'translate(-50%, -50%)',
+                            width: '170px',
+                            color: 'white',
+                            fontWeight: 'bold',
+                            fontSize: '28px',
+                            zIndex: 3, // Make sure the text is above the image layers
+                          }}
+                        >Lessons</p>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide id="jump_card">
                     {/* Content of your first slide */}
                     <div style={{ position: 'relative' }}>
                         <img id="card_backg" src={card_g} alt="logo" />
@@ -105,10 +157,22 @@ const Card1 = () => {
                             zIndex: 3, // Make sure the text is above the image layers
                           }}
                         >Train Focus&Agility</p>
+                        <p
+                        style={{
+                            position: 'absolute',
+                            top: '8%', // Adjust as needed to move the text up or down
+                            left: '138%', // Center horizontally
+                            transform: 'translate(-50%, -50%)',
+                            width: '170px',
+                            color: 'white',
+                            fontWeight: 'bold',
+                            fontSize: '28px',
+                            zIndex: 3, // Make sure the text is above the image layers
+                          }}
+                        >Focus</p>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide>
-                    {/* Content of your first slide */}
+                <SwiperSlide id="rotate_card">
                     <div style={{ position: 'relative' }}>
                         <img id="card_backg" src={card_g} alt="logo" />
                         <img id="balance" src={balance} alt="logo"
@@ -141,10 +205,22 @@ const Card1 = () => {
                             zIndex: 3, // Make sure the text is above the image layers
                           }}
                         >Keep Body Balance</p>
+                        <p
+                        style={{
+                            position: 'absolute',
+                            top: '8%', // Adjust as needed to move the text up or down
+                            left: '128%', // Center horizontally
+                            transform: 'translate(-50%, -50%)',
+                            width: '170px',
+                            color: 'white',
+                            fontWeight: 'bold',
+                            fontSize: '28px',
+                            zIndex: 3, // Make sure the text is above the image layers
+                          }}
+                        >Balance</p>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide>
-                    {/* Content of your first slide */}
+                <SwiperSlide id="quiz_card">
                     <div style={{ position: 'relative' }}>
                         <img id="card_backg" src={card_g} alt="logo" />
                         <Button color="primary" variant="contained" style={{ backgroundColor: 'white', color: 'black', position: 'relative', bottom: '300px', left: '50px', width: '180px' }}>
@@ -168,19 +244,36 @@ const Card1 = () => {
                             zIndex: 3, // Make sure the text is above the image layers
                           }}
                         >When you hurt what should do?</p>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    {/* Content of your first slide */}
-                    <div style={{ position: 'relative' }}>
-                        <img id="card_backg" src={card_g} alt="logo" />
-                        <Button color="primary" variant="contained" style={{ backgroundColor: 'white', color: 'black', position: 'relative', bottom: '320px', left: '40px', width: '200px' }}>
                         <p
                         style={{
-                            fontSize: '10px'
+                            position: 'absolute',
+                            top: '8%', // Adjust as needed to move the text up or down
+                            left: '138%', // Center horizontally
+                            transform: 'translate(-50%, -50%)',
+                            width: '170px',
+                            color: 'white',
+                            fontWeight: 'bold',
+                            fontSize: '28px',
+                            zIndex: 3, // Make sure the text is above the image layers
+                          }}
+                        >Quiz</p>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide id="resort_card">
+                    <div style={{ position: 'relative' }}>
+                        <img id="card_backg" src={card_g} alt="logo" />
+                        <Button color="primary" variant="contained" style={{ backgroundColor: 'white', color: 'black', position: 'relative', bottom: '305px', left: '40px', width: '200px', height: '30px' }}>
+                        <p
+                        style={{
+                            fontSize: '8px',
+                            width: '300px',
+                            whiteSpace: 'nowrap',
+                            // overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            fontWeight:'bold'
                         }}
                         >BlueMountain Resort (5.1mi)</p>
-                            <Button style={{ backgroundColor: 'pink', color: 'black' }}>
+                            <Button style={{ backgroundColor: '#FE76FF', color: 'black', left: '7px', width:'50px', height:'20px', fontSize:'12px' }}>
                             More
                             </Button>
                         </Button>
@@ -199,16 +292,29 @@ const Card1 = () => {
                                 zIndex: 2,
                             }}
                         />
-                        <Button color="primary" variant="contained" style={{ backgroundColor: 'white', color: 'black', position: 'relative', bottom: '200px', left: '40px', width: '200px', height: '50px' }}>
+                        <Button color="primary" variant="contained" style={{ backgroundColor: 'white', color: 'black', position: 'relative', bottom: '185px', left: '40px', width: '200px', height: '50px',  fontSize: '12px', fontWeight: 'bold' }}>
                         Go make 10 turns in mid level slope!
                         </Button>
+                        <p
+                        style={{
+                            position: 'absolute',
+                            top: '8%', // Adjust as needed to move the text up or down
+                            left: '138%', // Center horizontally
+                            transform: 'translate(-50%, -50%)',
+                            width: '170px',
+                            color: 'white',
+                            fontWeight: 'bold',
+                            fontSize: '28px',
+                            zIndex: 3, // Make sure the text is above the image layers
+                          }}
+                        >Tasks</p>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide>
-                    {/* Content of your first slide */}
+                <SwiperSlide id="search_resort_card">
                     <div style={{ position: 'relative' }}>
                         <img id="card_backg" src={card_g} alt="logo" />
                         <Button color="primary" variant="contained" style={{ backgroundColor: 'white', color: 'black', position: 'relative', bottom: '310px', left: '40px', width: '200px' }}>
+                        <SearchIcon></SearchIcon>
                         SEARCH
                         </Button>
                         <img id="map" src={map} alt="logo"
@@ -229,10 +335,22 @@ const Card1 = () => {
                         <Button color="primary" variant="contained" style={{ backgroundColor: 'white', color: 'black', position: 'relative', bottom: '180px', left: '40px', width: '200px', height: '50px' }}>
                         BlueMountain Resort
                         </Button>
+                        <p
+                        style={{
+                            position: 'absolute',
+                            top: '8%', // Adjust as needed to move the text up or down
+                            left: '138%', // Center horizontally
+                            transform: 'translate(-50%, -50%)',
+                            width: '170px',
+                            color: 'white',
+                            fontWeight: 'bold',
+                            fontSize: '28px',
+                            zIndex: 3, // Make sure the text is above the image layers
+                          }}
+                        >Finds</p>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide>
-                    {/* Content of your first slide */}
+                <SwiperSlide id="more_resort_cards">
                     <div style={{ position: 'relative' }}>
                         <img id="card_backg" src={card_g} alt="logo" />
                         <Button color="primary" variant="contained" style={{ fontSize: '10px', backgroundColor: 'white', color: 'black', position: 'relative', bottom: '280px', left: '50px', width: '180px', height: '30px' }}>
@@ -250,6 +368,19 @@ const Card1 = () => {
                         <Button color='primary' variant="contained" style={{ fontSize: '10px', backgroundColor: 'white', color: 'black', position: 'relative', bottom: '240px', left: '50px', width: '180px', height: '30px' }}>
 
                         </Button>
+                        <p
+                        style={{
+                            position: 'absolute',
+                            top: '10%', // Adjust as needed to move the text up or down
+                            left: '110%', // Center horizontally
+                            transform: 'translate(-50%, -50%)',
+                            width: '170px',
+                            color: 'white',
+                            fontWeight: 'bold',
+                            fontSize: '24px',
+                            zIndex: 3, // Make sure the text is above the image layers
+                          }}
+                        >More Resorts</p>
                     </div>
                 </SwiperSlide>
                 {/* More SwiperSlides */}
