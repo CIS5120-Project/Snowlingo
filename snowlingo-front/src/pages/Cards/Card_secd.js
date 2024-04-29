@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import './Card_init.css'
 import snow from '../../snowlingo.svg';
 import card_g from './card_g.svg';
@@ -7,11 +7,13 @@ import jump_1 from './pics/jump_1.svg';
 import balance from './pics/balance.svg';
 import lesson from './pics/lesson.svg';
 import map from './pics/map.svg';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 // import { Box, Grid, Paper, TextField, Button } from '@mui/material';
 import { Box, Button} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import Looks4Icon from '@mui/icons-material/Looks4';
+import CheckIcon from '@mui/icons-material/Check';
 // import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Navigation, Scrollbar } from 'swiper/modules';
@@ -26,9 +28,22 @@ import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 
 const Card1 = () => {
+    const navigate = useNavigate();
+    const swiperRef = useRef(null);
+    const [quized, setQuized] = useState(false);
 
     const handleClick = () => {
         console.log('The image was clicked!');
+      };
+
+    const handleQuized = () => {
+        setQuized(true);
+    };
+
+    const goToSlide = (index) => {
+        if (swiperRef.current) {
+          swiperRef.current.swiper.slideTo(index);
+        }
       };
 
     return (
@@ -52,6 +67,7 @@ const Card1 = () => {
 
             <img id="ski-icon" src={ski_icon} alt="logo" style={{ marginTop: "0.2rem", marginBottom: "0.5rem", marginLeft:"10.5rem" }}></img>
             <Swiper
+            ref={swiperRef}
             effect={'coverflow'}
             grabCursor={true}
             centeredSlides={true}
@@ -88,7 +104,7 @@ const Card1 = () => {
                         <img id="lesson_1" src={lesson} alt="logo"  onClick={handleClick}
                             style={{
                                 position: 'absolute',
-                                top: '45%', // Adjust this value to position `jump_1` as needed
+                                top: '40%', // Adjust this value to position `jump_1` as needed
                                 left: '100%', // Adjust this value to position `jump_1` as needed
                                 transform: 'translate(-50%, -50%)', // This centers the image on the container
                                 width: '90%', // Adjust this value to set the size of the `jump_1`
@@ -100,7 +116,7 @@ const Card1 = () => {
                         <p
                         style={{
                             position: 'absolute',
-                            top: '67%', // Adjust as needed to move the text up or down
+                            top: '70%', // Adjust as needed to move the text up or down
                             left: '99%', // Center horizontally
                             transform: 'translate(-50%, -50%)',
                             width: '170px',
@@ -125,6 +141,10 @@ const Card1 = () => {
                             zIndex: 3, // Make sure the text is above the image layers
                           }}
                         >Lessons</p>
+                        <Button color="primary" variant="contained" onClick={() => navigate("/lesson")} style={{ position: 'relative', bottom: '150px', left: '105px' }}>
+                        START
+                        </Button>
+                        <Looks4Icon style={{ position: 'relative', top: '-370px', left:'150px' }}></Looks4Icon>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide id="jump_card">
@@ -223,8 +243,10 @@ const Card1 = () => {
                 <SwiperSlide id="quiz_card">
                     <div style={{ position: 'relative' }}>
                         <img id="card_backg" src={card_g} alt="logo" />
-                        <Button color="primary" variant="contained" style={{ backgroundColor: 'white', color: 'black', position: 'relative', bottom: '300px', left: '50px', width: '180px' }}>
-                        A: Ask for help
+                        <Button color="primary" variant="contained" onClick={handleQuized}
+                            style={{ backgroundColor: quized?'#FE76FF':'white', color: 'black', position: 'relative', bottom: '300px', left: '50px', width: '180px' }}>
+                        {/* A: Ask for help */}
+                        {quized ? <><CheckIcon /> Correct</> : 'A: Ask for help'}
                         </Button>
                         <Button color='primary' variant="contained" style={{ backgroundColor: 'white', color: 'black', position: 'relative', bottom: '280px', left: '50px', width: '180px' }}>
                         B: Wait and rest
@@ -273,7 +295,7 @@ const Card1 = () => {
                             fontWeight:'bold'
                         }}
                         >BlueMountain Resort (5.1mi)</p>
-                            <Button style={{ backgroundColor: '#FE76FF', color: 'black', left: '7px', width:'50px', height:'20px', fontSize:'12px' }}>
+                            <Button onClick={()=>goToSlide(6)} style={{ backgroundColor: '#FE76FF', color: 'black', left: '7px', width:'50px', height:'20px', fontSize:'12px' }}>
                             More
                             </Button>
                         </Button>
