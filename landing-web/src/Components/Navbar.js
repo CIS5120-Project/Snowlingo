@@ -25,9 +25,7 @@ function Navbar (){
             "color": "#5145c6",
             "margin": "0 2rem"
           }}
-          onClick={() => {
-            console.info("I'm a button.");
-          }}
+          onClick={() => { navigate('/home') }}
         >
           <span className="hover:text-logoPink transition-colors duration-100">Home</span>
         </Link>
@@ -38,9 +36,7 @@ function Navbar (){
           component="button"
           variant="h6"
           style={{"color": "#5145c6", "margin": "0 2rem"}}
-          onClick={() => {
-            console.info("I'm a button.");
-          }}
+          onClick={() => { navigate('/reflection') }}
         >
           <span className="hover:text-logoPink transition-colors duration-100">Design Learnings</span>
         </Link>

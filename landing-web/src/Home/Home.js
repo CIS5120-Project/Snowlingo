@@ -1,14 +1,20 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
 
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import { Typography, Button } from '@mui/material';
 
 import Navbar from '../Components/Navbar'
 import Sections from './Sections'
+import DesignProcess from './DesignProcess'
 
 function Home (){
-  const navigate = useNavigate();
+  const handleScroll = () => {
+    window.scrollBy({
+      top: window.innerHeight,
+      left: 0,
+      behavior: 'smooth'
+  });
+  }
 
   return (
     <div className="w-screen">
@@ -17,6 +23,7 @@ function Home (){
         <div className="flex justify-center px-48 my-10">
           <img
             src="https://snowlingo-images.s3.amazonaws.com/felipe-giacometti-FN4cCdslXuE-unsplash.jpg"
+            alt="snowboard"
             className="w-2/5 mx-5"
             style={{"objectFit": "cover"}}
           ></img>
@@ -37,7 +44,7 @@ function Home (){
           </div>
         </div>
         <div className="w-full flex justify-center" style={{"marginTop": "-3rem"}}>
-          <KeyboardDoubleArrowDownIcon className="animate-bounce" fontSize="large"/>
+          <KeyboardDoubleArrowDownIcon className="animate-bounce cursor-pointer" fontSize="large" onClick={handleScroll}/>
         </div>
       </div>
       <section className="bg-slate-50 w-sreen">
@@ -70,6 +77,7 @@ function Home (){
         </div>
       </section>
       <Sections />
+      <DesignProcess />
     </div>
   );
 };
