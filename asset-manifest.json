@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Snowlingo/static/css/main.b22f938e.css",
+    "main.js": "/Snowlingo/static/js/main.f49282e2.js",
+    "static/js/453.f980abd8.chunk.js": "/Snowlingo/static/js/453.f980abd8.chunk.js",
+    "static/media/snowlingo.svg": "/Snowlingo/static/media/snowlingo.2f1602dc87502cbe4a07b4aabfaaa46b.svg",
+    "index.html": "/Snowlingo/index.html",
+    "main.b22f938e.css.map": "/Snowlingo/static/css/main.b22f938e.css.map",
+    "main.f49282e2.js.map": "/Snowlingo/static/js/main.f49282e2.js.map",
+    "453.f980abd8.chunk.js.map": "/Snowlingo/static/js/453.f980abd8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b22f938e.css",
+    "static/js/main.f49282e2.js"
+  ]
+}
