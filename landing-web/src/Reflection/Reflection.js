@@ -1,8 +1,11 @@
 import Navbar from "../Components/Navbar"
 import Lofi from "./Lofi"
 import Hifi from "./Hifi"
+import Interactive from "./Interactive"
+import Usability from "./Usability"
 
-import { Container, Typography, AvatarGroup, Avatar } from '@mui/material';
+import { Container, Typography, AvatarGroup, Avatar, Button } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 function Reflection () {
   return (
@@ -30,6 +33,22 @@ function Reflection () {
             </Typography>
           </div>
         </div>
+        <Button
+          variant="outlined"
+          startIcon={<GitHubIcon />}
+          sx={{
+            marginBottom: '0.5rem',
+            color: "#211951",
+            borderColor: "#211951",
+            '&:hover': {
+              borderColor: "#836FFF",
+              color: "#836FFF"
+            }
+          }}
+          onClick={ () => window.location.href='https://github.com/CIS5120-Project/Snowlingo/tree/master/snowlingo-front' }
+        >
+          Github
+        </Button>
         <img
           src="https://snowlingo-images.s3.amazonaws.com/melvin-trav-SYwSFyuSWHI-unsplash.jpg"
           alt="ski background"
@@ -104,6 +123,16 @@ function Reflection () {
           </section>
           <Lofi />
           <Hifi />
+          <Interactive />
+          <Usability />
+          <section className="my-10">
+            <Typography variant="h4" component="h4" sx={{ fontWeight: "bold", color: "#211951", marginBottom: "1rem"}}>
+              Next Steps
+            </Typography>
+            <Typography variant="h6" component="p">
+              Moving forward, we will harness the insights gained from our usability study to elevate the application’s user experience. We plan to implement structured input fields with dropdown selections for more consistent data entry, enhance navigational cues for a seamless user journey, and introduce user-driven customization for personal workspace layouts. These improvements aim to streamline the user interface, minimize cognitive load, and foster a more personalized interaction with the app. Meanwhile, we want to focus on the whole customized course learning experience so as to provide the snowboarding/skiing course special for all the individual users.
+            </Typography>
+          </section>
         </main>
       </Container>
     </div>

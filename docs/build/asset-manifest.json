@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b22f938e.css",
+    "main.js": "/static/js/main.5fae19c9.js",
+    "static/js/453.f980abd8.chunk.js": "/static/js/453.f980abd8.chunk.js",
+    "static/media/snowlingo.svg": "/static/media/snowlingo.2f1602dc87502cbe4a07b4aabfaaa46b.svg",
+    "index.html": "/index.html",
+    "main.b22f938e.css.map": "/static/css/main.b22f938e.css.map",
+    "main.5fae19c9.js.map": "/static/js/main.5fae19c9.js.map",
+    "453.f980abd8.chunk.js.map": "/static/js/453.f980abd8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b22f938e.css",
+    "static/js/main.5fae19c9.js"
+  ]
+}
